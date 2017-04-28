@@ -12,7 +12,7 @@ This project require Eclipse, Tomcat8 and JDK7 installed on your machine to run.
 
 Prerequisites
 
-A csv file reuire which has data for shops, products they are selling and price. The project is created using JSP/Servlet so nothing else required.
+A csv file require which has data for shops, products they are selling and price. The project is created using JSP/Servlet so nothing else required.
 
 Data File data.csv
 

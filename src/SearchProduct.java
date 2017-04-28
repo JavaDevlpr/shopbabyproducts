@@ -64,7 +64,6 @@ public class SearchProduct extends HttpServlet {
 	        	Product prd = new Product();
 	        	// read csv data file line by line
 	            List<String> line = CSVUtils.parseLine(scanner.nextLine());
-	            System.out.println("Data [id= " + line.get(0) + ", code= " + line.get(1) + " , name=" + line.get(2) + "]");
 	            prd.setShopId(Integer.parseInt(line.get(0)));
 	            prd.setPrice(Float.parseFloat(line.get(1)));
 	            prd.setProdName(line.get(2));
@@ -86,7 +85,6 @@ public class SearchProduct extends HttpServlet {
 			for(int id :shopIdss){
 				sum=0f;
 				for (String s : prodNames) {
-					System.out.println("s..."+s);
 					for(Product p:prodList){
 						if(id==p.getShopId()){
 							if(p.getProdName().contains(s)){
@@ -104,7 +102,6 @@ public class SearchProduct extends HttpServlet {
 			// get min price
 			Entry<Integer, Float> min = null;
 			for (Entry<Integer, Float> entry : priceList.entrySet()) {
-				System.out.println("val.."+entry.getValue());
 				if (min == null || min.getValue() > entry.getValue()) {
 					min = entry;
 				}
@@ -112,9 +109,7 @@ public class SearchProduct extends HttpServlet {
 			result = min.getKey() + "," + min.getValue();
 			
 			if(containsProd.containsKey(min.getKey())){
-				System.out.println("min.getKey()...."+min.getKey());
 				flag = containsProd.get(min.getKey());
-				System.out.println("flg...."+flag);
 				if(!flag)
 					result = "none";
 			}
